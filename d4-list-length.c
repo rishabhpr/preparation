@@ -81,6 +81,27 @@ int getCountR(node *head){
 	return 1+ getCountR(head->next);
 }
 
+void searchI(node* head, int key){
+
+	node* current = head;
+	while(current!=NULL){
+		if(current->data == key) break;
+		current = current->next;
+	}
+
+	if(current!=NULL)
+		printf("%i found in list\n",current->data);
+	else printf("%i not found\n",key);
+
+
+}
+
+int searchR(node* head , int key ){
+
+	if(head == NULL) return 0;
+	if(head->data == key) return 1;
+	return searchR(head->next,key);
+}
 int main(){
 
 	node* head = NULL;
@@ -96,6 +117,10 @@ int main(){
 	printf("Number of nodes : %i\n",getCount(head));
 	printList(head);
 	push(&head, 0);
+	searchI(head,100);
+	searchI(head,999);
+	searchR(head, 100)? printf("100 found\n") : printf("100 not found\n");
+	searchR(head, 999)? printf("999 found\n") : printf("999 not found\n");
 	printf("Number of nodes : %i\n",getCount(head));
 	printList(head);;
 	return 0;

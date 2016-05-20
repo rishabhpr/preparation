@@ -8,10 +8,6 @@ typedef struct node{
 	struct node* next;
 } node;
 
-int sum(int a,int b){
-	return a+b;
-}
-
 node* createNode(int newData){
 
 	node* new = (node*) malloc(sizeof(node));
@@ -88,8 +84,9 @@ node* numberToList(int number){
 }
 
 int sumOfLists(node *h1 , node* h2){
-	return sum(listToNumber(h1),listToNumber(h2));
+	return listToNumber(h1) + listToNumber(h2);
 }
+
 
 
 int main(){

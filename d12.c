@@ -68,7 +68,12 @@ int listToNumber(node* current){
 	return number;
 
 }
-
+int isPowerOfTwo (int num)
+{
+ 
+  int res = n& (!n&(n-1));
+  printf("Res = %i\n",res)
+}
 
 
 node* numberToList(int number){
@@ -100,7 +105,7 @@ int main(){
 	node* h1 = numberToList(num1);
 	node* h2 = numberToList(num2);
 	printf("Sum = %i\n",sumOfLists(h1,h2));
-
+	isPowerOfTwo(200);
 
 	//append(&head,5);
 	//push(&head,7);
